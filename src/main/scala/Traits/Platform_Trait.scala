@@ -12,7 +12,7 @@ trait Platform_Trait{
 
   def setSalary(priceForCourse: Double, feeFoUsingOffice: Double ,teacher: Teacher, platform: Platform)={
     var newFeeFoUsingOffice = (feeFoUsingOffice * priceForCourse) / 100;
-    var newPriceForCourse = priceForCourse - newFeeFoUsingOffice; //від зарплати віднімається відсоток за користування офісом
+    var newPriceForCourse = priceForCourse - newFeeFoUsingOffice; 
 
     platform.setFiatMoney(platform.getFiatMoney() - newPriceForCourse);
     teacher.setFiatMoney(teacher.getFiatMoney() + newPriceForCourse);
