@@ -19,7 +19,7 @@ class Office(private var adress: Adress) extends Market_Trait with Platform_Trai
         var tokensAmount: Double = 0;
         var coef: Double = 1.0;
         var marketRate = market.getExchangeRate();
-        //більше токенів отримують ті студенти, хто має вищу оцінку
+        
         grade match
           case 0 =>{
             coef = 0.9;
@@ -70,7 +70,7 @@ class Office(private var adress: Adress) extends Market_Trait with Platform_Trai
           student.setTokens(result(1));
         }
 
-        if(marketRate > 2){ //токени продаються, коли ціна на токен занадто збільшується
+        if(marketRate > 2){ 
           if(platform.getTokens() > contract.getCoursePrice()){            
             var result = sellTokens(contract.getCoursePrice(), market, platform.getFiatMoney(), platform.getTokens());
             platform.setFiatMoney(result(0));
@@ -83,7 +83,7 @@ class Office(private var adress: Adress) extends Market_Trait with Platform_Trai
           }
         }
 
-        if(marketRate < 0.5){ //токени купляються по нижчий ціні, коли ціна падає
+        if(marketRate < 0.5){ 
           var newCourcePrice = contract.getCoursePrice() * market.getExchangeRate(); 
           
           if(platform.getFiatMoney() > newCourcePrice){
