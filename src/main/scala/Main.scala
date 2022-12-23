@@ -1,6 +1,6 @@
 object Main extends App{
 
-  var officeAdress = new Adress("Ukraine", "Kyiv", "Shevchenka Street 8"); //адреса офісу
+  var officeAdress = new Adress("Ukraine", "Kyiv", "Shevchenka Street 8"); 
 
   var basicContract = new Contract(200, 10);
   var teacherContract = new Contract(200, 10, 6); 
@@ -19,7 +19,7 @@ object Main extends App{
   var platform = new Platform;
   var office = new Office(officeAdress); 
 
-  office.firstReward(teacher.getList(), platform, market); //нагорода за реєстрацію
+  office.firstReward(teacher.getList(), platform, market); 
 
   println("Initial information about students:")
   teacher.showList();
