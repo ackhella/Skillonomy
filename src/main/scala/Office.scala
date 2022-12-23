@@ -63,7 +63,7 @@ class Office(private var adress: Adress) extends Market_Trait with Platform_Trai
         }
         setSalary(contract.getCoursePrice(), contract.getFee(), teacher, platform);
 
-        if(student.getTokens() > contract.getCoursePrice()){ //якщо студенти мають надлишок, то вони можуть обміняти токени на гроші
+        if(student.getTokens() > contract.getCoursePrice()){ 
           var overPrice = student.getTokens() - contract.getCoursePrice();
           var result =  sellTokens(overPrice, market, student.getFiatMoney(), student.getTokens());
           student.setFiatMoney(result(0));
